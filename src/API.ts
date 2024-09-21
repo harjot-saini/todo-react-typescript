@@ -23,6 +23,7 @@ export const addTodo = async (
       name: formData.name,
       description: formData.description,
       status: false,
+      priority: formData.priority,
     }
 
     const saveTodo: AxiosResponse<ApiDataType> = await axios.post(
@@ -60,7 +61,6 @@ export const deleteTodo = async (
   _id: string
 ): Promise<AxiosResponse<ApiDataType>> => {
   try {
-    console.log(_id)
     const deletedTodo: AxiosResponse<ApiDataType> = await axios.delete(
       `${baseUrl}/delete-todo/${_id}`
     )

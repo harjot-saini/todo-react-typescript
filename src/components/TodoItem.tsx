@@ -11,7 +11,9 @@ const TodoItem: React.FC<Props> = ({ todo, updateTodo, deleteTodo }) => {
   return (
     <div className="Card">
       <div className="Card--text">
-        <h1 className={checkTodo}>{todo.name}</h1>
+        <h1 className={checkTodo}>
+          {todo.name} {todo?.priority ? `- ${todo.priority}` : ''}
+        </h1>
         <span className={checkTodo}>{todo.description}</span>
       </div>
       <div className="Card--button">
